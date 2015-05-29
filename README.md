@@ -100,7 +100,7 @@ var LikeButton = React.createClass({
 
     return (
       <button className={cl}>
-        S
+        +
       </button>
     );
   }
