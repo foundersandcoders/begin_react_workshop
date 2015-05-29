@@ -294,6 +294,12 @@ This pattern will be your bread-and-butter in making React apps. Find some commo
 ---
 So now that we've gone through the basics, we can start building an app to learn some more best-practices, patterns, and cement this knowledge!
 
+
+
+
+
+
+
 ## Dev tools
 
 [__browserify__](http://browserify.org/) - lets you use the CommonJS `require` pattern in your frontend JS.
