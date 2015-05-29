@@ -1,6 +1,8 @@
 ## Begin React Workshop
 Remember, `npm run dev`, and `localhost:8080`.
 
+This is the static version made purely in props.
+
 ## The plan
 We'll be making a 5-a-day tracker app, because we like pretending to be healthy (read: you). The aim of this app is to be able to add fruit items to a list and keep track of how many of those items you've eaten, as well as being able to search through and clear the list. And by 'fruit', I mean whatever you want.
 With that in mind, we're going to want to break this app down into a number of distinct pieces of functionality. We want to be able to:
