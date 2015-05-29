@@ -9,24 +9,24 @@ We're gonna start by introducing you to the concepts in React by incrementally m
 git clone begin-react-workshop
 cd begin-react-workshop
 npm install
-git checkout babysteps
 ```
-Now you're all installed and good to go. Before we go any further, open up the `package.json` file. __{explain package.json briefly}__. So now to run our development scripts, in our terminal, type:
+Now you're all installed and good to go. So now to run our dev script, in the terminal, type:
 ```
 npm run dev
 ```
-Open a browser of your choice and navigate to `localhost:8080`, and hopefully you'll see nothing there. What an anticlimax, but I'm still proud of you all.
+Open a browser of your choice and navigate to `localhost:8080`, and hopefully you'll see nothing there. What an anticlimax, but I'm still proud of you all. To get started, `git checkout babysteps`.
 
 ## Branches
-__Master__ - Setup branch
-__babysteps__ - First steps branch
-__babystepsA__ - Running code for the final part of first steps
-__AppMockup__ - The mockup for the app. Just HTML
-__AppStatic__ - The static, non-interactive version of the app
-__AppComplete__ - The dynamic version of the app
+We'll be checking out regularly through the day, so on this branch you'll have a reference point:  
+* __Master__ - Landing branch  
+* __babysteps__ - First steps branch  
+* __babystepsA__ - Running code for the final part of first steps  
+* __AppMockup__ - The mockup for the app. Just HTML  
+* __AppStatic__ - The static, non-interactive version of the app  
+* __AppComplete__ - The dynamic version of the app  
 
 ## Scripts
 There are a set of development scripts in the package.json for your use:
-__npm run build__ - Lint your jsx, and build your jsx from src to build
-__npm run dev__ - Build and serve your project at port 8080, with incremental building on src files changing, and auto-refresh on build
-__npm run lint__ - Lint your jsx
+* __`npm run build`__ - Lint your jsx, and build your jsx from src to build
+* __`npm run dev`__ - Build and serve your project at port 8080, with incremental building on src files changing, and auto-refresh on build
+* __`npm run lint`__ - Lint your jsx
