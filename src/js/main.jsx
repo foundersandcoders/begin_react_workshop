@@ -1,7 +1,7 @@
 var React 	 = require("react");
-var FruitApp = require("./components/FruitApp.jsx");
+var FruitAppContainer = require("./components/FruitAppContainer.jsx");
 
 React.render(
-	<FruitApp />,
+	<FruitAppContainer />,
 	document.getElementById("content")
 );
