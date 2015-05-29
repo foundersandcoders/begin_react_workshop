@@ -12,12 +12,10 @@ var FruitListItem = React.createClass({
 	},
 
 	plusHandler: function(e) {
-		e.preventDefault();
 		this.props.incrementQuantity();
 	},
 
 	minusHandler: function(e) {
-		e.preventDefault();
 		this.props.decrementQuantity();
 	},
 
