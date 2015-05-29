@@ -6,15 +6,18 @@ We're gonna start by introducing you to the concepts in React by incrementally m
 ## Setup
 
 ```
-git clone begin-react-workshop
-cd begin-react-workshop
+git clone https://github.com/foundersandcoders/begin_react_workshop.git
+cd begin_react_workshop
 npm install
+git checkout [see branches below]
 ```
-Now you're all installed and good to go. So now to run our dev script, in the terminal, type:
+Now you're all installed and good to go. To get developing, you'll need `src/js` and `build/js` folders. In the terminal, type:
 ```
 npm run dev
 ```
-Open a browser of your choice and navigate to `localhost:8080`, and hopefully you'll see nothing there. What an anticlimax, but I'm still proud of you all. To get started, `git checkout babysteps`.
+Open a browser of your choice and navigate to `localhost:8080`, and hopefully you'll see nothing there. What an anticlimax, but I'm still proud of you all.  
+
+To get started, `git checkout babysteps`.
 
 ## Branches
 We'll be checking out regularly through the day, so on this branch you'll have a reference point:  
