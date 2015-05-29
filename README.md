@@ -92,14 +92,14 @@ var LikeButton = React.createClass({
     },
 
   render: function() {
-    var cl = "like";
+    var buttonClass = "like";
 
     if(this.props.liked) {
-      cl += " yup";
+      buttonClass += " yup";
     }
 
     return (
-      <button className={cl}>
+      <button className={buttonClass}>
         S
       </button>
     );
@@ -159,14 +159,14 @@ var LikeButton = React.createClass({
   },
 
   render: function() {
-    var cl = "like";
+    var buttonClass = "like";
 
       if(this.state.liked) {
-        cl += " yup";
+        buttonClass += " yup";
       }
 
     return (
-      <button className={cl} onClick={this.clickHandler}>
+      <button className={buttonClass} onClick={this.clickHandler}>
         {this.state.liked ? "-" : "+"}
       </button>
     );
@@ -228,14 +228,14 @@ var LikeButton = React.createClass({
   },
 
   render: function() {
-    var cl = "like";
+    var buttonClass = "like";
 
     if(this.props.liked) {
-      cl += " yup";
+      buttonClass += " yup";
     }
 
     return (
-      <button className={cl} onClick={this.clickHandler}>
+      <button className={buttonClass} onClick={this.clickHandler}>
         {this.props.liked ? "-" : "+"}
       </button>
     );
