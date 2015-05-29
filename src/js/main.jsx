@@ -23,14 +23,14 @@ var LikeButton = React.createClass({
   },
 
   render: function() {
-    var cl = "like";
+    var buttonClass = "like";
 
     if(this.props.liked) {
-      cl += " yup";
+      buttonClass += " yup";
     }
 
     return (
-      <button className={cl} onClick={this.clickHandler}>
+      <button className={buttonClass} onClick={this.clickHandler}>
         {this.props.liked ? "-" : "+"}
       </button>
     );
