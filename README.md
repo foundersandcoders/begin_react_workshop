@@ -26,9 +26,9 @@ We'll be checking out regularly through the day, so on this branch you'll have a
 * __Master__ - Landing branch  
 * __babysteps__ - First steps branch  
 * __babystepsA__ - Running code for the final part of first steps  
-* __AppMockup__ - The mockup for the app. Just HTML  
-* __AppStatic__ - The static, non-interactive version of the app  
-* __AppComplete__ - The dynamic version of the app  
+* __appmockup__ - The mockup for the app. Just HTML  
+* __appstatic__ - The static, non-interactive version of the app  
+* __appcomplete__ - The dynamic version of the app  
 
 ## Scripts
 There are a set of development scripts in the package.json for your use:
