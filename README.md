@@ -11,13 +11,15 @@ cd begin_react_workshop
 npm install
 git checkout [see branches below]
 ```
-Now you're all installed and good to go. To get developing, you'll need `src/js` and `build/js` folders. In the terminal, type:
+Now you're all installed, there's one more step you may need to take. To get developing, you'll need `src/js` and `build/js` folders. In the `src/js` folder, you'll need a file called `main.jsx`. That'll be your starting point. Once you've got those, in the terminal, type:
 ```
 npm run dev
 ```
 Open a browser of your choice and navigate to `localhost:8080`, and hopefully you'll see nothing there. What an anticlimax, but I'm still proud of you all.  
 
 To get started, `git checkout babysteps`.
+
+n.b. if you get an EADDIRINUSE error, change the `live-reload` port in your package.json and in your `index.html`.
 
 ## Branches
 We'll be checking out regularly through the day, so on this branch you'll have a reference point:  
