@@ -1,6 +1,8 @@
 ## Begin React Workshop
 Remember, `npm run dev`, and `localhost:8080`.
 
+On this branch, you'll find info about dynamic children, lifecycle events, refs, and forms.
+
 ## Dynamic Children
 We can map over elements and generate elements or components. They must be in an array though:
 
@@ -175,11 +177,13 @@ The second is using __controlled components__:
 ```js
 var controlledFormComponent = React.createClass({
   getInitialState: function() {
-    return {value: "Hi!"};
+    return {value: "Hello friends"};
   },
+  
   handleChange: function(event) {
     this.setState({value: event.target.value});
   },
+  
   render: function() {
     var value = this.state.value;
     return <input type="text" value={value} onChange={this.handleChange} />;
@@ -192,3 +196,73 @@ There are a number of benefits to using controlled components, and keeping state
 * We can manipulate the value in a dynamic way (e.g. truncate, on-the-fly validation)
 
 ---
+## Prop Validation - PropTypes
+PropTypes provides a way to validate props. This is helpful not only for debugging but also for letting you see, at a glance, what a given component expects and how it should be used properly. To quote from the React docs (with some modification):
+
+```js
+var Props = React.PropTypes
+
+React.createClass({
+  propTypes: {
+    // You can declare that a prop is a specific JS primitive. By default, these
+    // are all optional.
+    optionalArray: Props.array,
+    optionalBool: Props.bool,
+    optionalFunc: Props.func,
+    optionalNumber: Props.number,
+    optionalObject: Props.object,
+    optionalString: Props.string,
+
+    // Anything that can be rendered: numbers, strings, elements or an array
+    // containing these types.
+    optionalNode: Props.node,
+
+    // A React element.
+    optionalElement: Props.element,
+
+    // You can also declare that a prop is an instance of a class. This uses
+    // JS's instanceof operator.
+    optionalMessage: Props.instanceOf(Message),
+
+    // You can ensure that your prop is limited to specific values by treating
+    // it as an enum.
+    optionalEnum: Props.oneOf(['News', 'Photos']),
+
+    // An object that could be one of many types
+    optionalUnion: Props.oneOfType([
+      Props.string,
+      Props.number,
+      Props.instanceOf(Message)
+    ]),
+
+    // An array of a certain type
+    optionalArrayOf: Props.arrayOf(Props.number),
+
+    // An object with property values of a certain type
+    optionalObjectOf: Props.objectOf(Props.number),
+
+    // An object taking on a particular shape
+    optionalObjectWithShape: Props.shape({
+      color: Props.string,
+      fontSize: Props.number
+    }),
+
+    // You can chain any of the above with `isRequired` to make sure a warning
+    // is shown if the prop isn't provided.
+    requiredFunc: Props.func.isRequired,
+
+    // A value of any data type
+    requiredAny: Props.any.isRequired,
+
+    // You can also specify a custom validator. It should return an Error
+    // object if the validation fails. Don't `console.warn` or throw, as this
+    // won't work inside `oneOfType`.
+    customProp: function(props, propName, componentName) {
+      if (!/matchme/.test(props[propName])) {
+        return new Error('Validation failed!');
+      }
+    }
+  },
+  /* ... */
+});
+```
