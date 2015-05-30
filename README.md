@@ -1,7 +1,7 @@
 ## Begin React Workshop
 Remember, `npm run dev`, and `localhost:8080`.
 
-On this branch, you'll find info about dynamic children, lifecycle events, refs, and forms.
+On this branch, you'll find info about dynamic children, lifecycle events, refs, forms, and prop validation.
 
 ## Dynamic Children
 We can map over elements and generate elements or components. They must be in an array though:
