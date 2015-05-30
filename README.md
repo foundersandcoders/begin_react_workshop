@@ -1,7 +1,8 @@
 ## Begin React Workshop
 
 [![Join the chat at https://gitter.im/foundersandcoders/begin_react_workshop](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/foundersandcoders/begin_react_workshop?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  
-[Survey please!](https://founderscoders.typeform.com/to/wMiTnS)
+__[Survey please!](https://founderscoders.typeform.com/to/wMiTnS)__  
+__[Slides from the day](http://slides.com/jamesgriffiths/begin-react-workshop/#/)__
 
 So, today we're gonna learn some react.
 We're gonna start by introducing you to the concepts in React by incrementally making a few components, and then after lunch, we'll build a basic app to entrench these concepts, consolidate what we've learned, learn some best practices, and generally try to fix most of the things wrong with the world today.
@@ -96,6 +97,4 @@ Ranked from 1-5 based on presumed react-experience, but all have been chosen for
 * _[React JSFiddle](http://jsfiddle.net/reactjs/69z2wepo/)_ - lets you play around with React in your browser
 * _[React cheatsheet](http://ricostacruz.com/cheatsheets/react.html)_ - A good quick reference guide for concepts and syntax alike
 * _[List of react resources](https://github.com/enaqx/awesome-react)_ - A fairly long, curated list of react/flux resources. A bit overwhelming at first, but really good when you get a bit more familiar with react.
-
-* [Slides from the day](http://slides.com/jamesgriffiths/begin-react-workshop/#/)
 * [Flux tutorial](https://github.com/MIJOTHY/FOR_FLUX_SAKE)
