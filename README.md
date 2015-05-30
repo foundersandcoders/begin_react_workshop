@@ -19,15 +19,15 @@ Open a browser of your choice and navigate to `localhost:8080`, and hopefully yo
 
 To get started, `git checkout babysteps`.
 
-n.b. if you get an EADDIRINUSE error, change the `live-reload` port in your package.json and in your `index.html`.
+Note: if you get an EADDIRINUSE error, change the `live-reload` port in your package.json and in your `index.html`.
 
 ## Branches
 We'll be checking out regularly through the day, so on this branch you'll have a reference point:  
 * __Master__ - Landing branch  
 * __babysteps__ - First steps branch  
 * __babystepsA__ - Running code for the final part of first steps  
+* __kidsteps__ - Some useful extras, best practices and so forth
 * __appmockup__ - The mockup for the app. Just HTML  
-* __appstatic__ - The static, non-interactive version of the app  
 * __appcomplete__ - The dynamic version of the app  
 
 ## Scripts
