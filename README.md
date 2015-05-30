@@ -27,7 +27,7 @@ Note: if you get an EADDIRINUSE error, change the `live-reload` port in your pac
 
 ## Branches
 We'll be checking out regularly through the day, so on this branch you'll have a reference point:  
-* __Master__ - Landing branch  
+* __master__ - Landing branch  
 * __babysteps__ - First steps branch  
 * __babystepsA__ - Running code for the final part of first steps  
 * __kidsteps__ - Some useful extras, best practices and so forth
