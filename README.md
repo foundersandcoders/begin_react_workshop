@@ -286,4 +286,14 @@ Since we want some interactivity in our app, we define some state-setting functi
 This pattern will be your bread-and-butter in making React apps. Find some common parent that holds state. Define some state-setting functions in that parent component. Render child components in that parent, passing those methods down as props, and add event handlers to those child components which call `this.props.myFunkyStateSetter`.
 
 ---
-So now that we've gone through the basics, we can start building an app to learn some more best-practices, patterns, and cement this knowledge!
+So now that we've gone through the basics, we can start building an app to learn some more best-practices, patterns, and cement this knowledge. There are two options from here:
+```
+// Running code from this stage
+git checkout babystepsA
+
+// More on some React fundamentals
+git checkout kidsteps
+
+// A mockup of the app to build
+git checkout appmockup
+```
