@@ -2,6 +2,7 @@
   "name": "begin_react_workshop",
   "version": "0.0.1",
   "description": "resources for weekend react workshop",
+  "repository": "https://github.com/foundersandcoders/begin_react_workshop.git",
   "main": "index.js",
   "scripts": {
     "dev": "npm run serve & npm run live-reload & npm run build:watch",
