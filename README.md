@@ -26,13 +26,13 @@ Even though `<div>` looks remarkably like html and so seems a bit lost sitting i
 
 It transpiles to js (that's what we're using the `browserify` transform `reactify` for), and ultimately is just an easier-to-read alternative to writing out to-be-rendered elements than plain js. Here's a comparison:
 ```js
-// plain js
+// JSX
 React.render(
   <div>hi</div>,
   document.getElementById("content")
 );
 
-// JSX
+// plain js
 React.render(
   React.createElement("div", null, "hi"),
   document.getElementById("content")
@@ -104,7 +104,7 @@ var LikeButton = React.createClass({
 
     return (
       <button className={buttonClass}>
-        +
+        S
       </button>
     );
   }
@@ -286,4 +286,14 @@ Since we want some interactivity in our app, we define some state-setting functi
 This pattern will be your bread-and-butter in making React apps. Find some common parent that holds state. Define some state-setting functions in that parent component. Render child components in that parent, passing those methods down as props, and add event handlers to those child components which call `this.props.myFunkyStateSetter`.
 
 ---
-So now that we've gone through the basics, we can start building an app to learn some more best-practices, patterns, and cement this knowledge!
+So now that we've gone through the basics, we can start building an app to learn some more best-practices, patterns, and cement this knowledge. There are two options from here:
+```
+// Running code from this stage
+git checkout babystepsA
+
+// More on some React fundamentals
+git checkout kidsteps
+
+// A mockup of the app to build
+git checkout appmockup
+```
