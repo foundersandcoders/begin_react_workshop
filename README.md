@@ -26,13 +26,13 @@ Even though `<div>` looks remarkably like html and so seems a bit lost sitting i
 
 It transpiles to js (that's what we're using the `browserify` transform `reactify` for), and ultimately is just an easier-to-read alternative to writing out to-be-rendered elements than plain js. Here's a comparison:
 ```js
-// plain js
+// JSX
 React.render(
   <div>hi</div>,
   document.getElementById("content")
 );
 
-// JSX
+// plain js
 React.render(
   React.createElement("div", null, "hi"),
   document.getElementById("content")
