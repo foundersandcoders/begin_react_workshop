@@ -43,7 +43,11 @@ Although it might seem off-putting at first (bundling our view and our view-logi
 ---
 ## My First Component
 _What's a component?_
-Each component is a piece of UI. You can think of a component as a simple function that takes in some props and state (more on these later) and returns some HTML. At the bare minimum, a component must have a `render` method defined. Anyway, let's get to it:
+Each component is a piece of UI. You can think of a component as a simple function that takes in some props and state (more on these later) and returns some HTML. At the bare minimum, a component must have a `render` method defined.
+
+Components are the fundamental building-block of React applications, and when you think of a UI you want to build, you should break it down into the smallest possible components you are able to define, and then build the UI through composing those components.
+
+Anyway, let's get to it:
 ```js
 var React = require("react");
 
@@ -122,7 +126,11 @@ React.render(<User />, document.getElementById("content"));
 ```
 Here we start to see the power of components. We are building individual, logically distinct parts of our UI, and then composing these parts to form the grand picture.
 #### Props
-Components have access to variables passed down to them through `this.props`. In this way we can supply components with content to render by passing that content in through the owner component.In `JSX` they are provided as attributes of the owned component.
+Props are one of the two key ways to customise your components. Props are _external_.
+> Properties are to React components what attributes are to HTML elements. In fact, their most basic use is in the form of attributes, in JSX.
+> _[Chris Pitt](https://medium.com/react-tutorials/react-properties-ef11cd55caa0)_
+
+Components have access to variables passed down to them through `this.props`. In this way we can supply components with content to render by passing that content in through the owner component. So, props allow components to behave differently based on external information. In `JSX` they are provided as attributes of the owned component.
 
 An __owner__ component is just a component that sets the props of another component, and calls that component in its own `render()` method.
 Props are, in essence, __immutable parameters__ passed down from above. A component should never try to modify its own `props` object.
@@ -131,7 +139,7 @@ The only way for props to change is for a __re-render to be triggered__ and so a
 
 * `getDefaultProps()` lets us specify sensible default props that can be overriden by prop-passing.
 * Components can be used in `render()` just as HTML elements can
-* As usual, we can only `return` one thing from a function. In this case, we must always return one root node regardless of its nesting
+* As usual, we can only `return` one thing from a function. In this case, we must always return one root node, and nest other components we want to render within it
 * JSX has the option of any tag being self-closing
 * `className` rather than `class` in `JSX` (as `class` is a reserved word)
 *  Also note that since conceptually we can think of each render being completely fresh, we don't need to manipulate the `className` string in `LikeButton` to account for subtracting `"yup"`.
@@ -184,9 +192,11 @@ React also autobinds to the component instance for us, so there's no need for `.
 onClick={this.clickHandler.bind(null, "first argument")}
 ```
 
-n.b. Event handlers are camelCase in JSX.
+Note: Event handlers are camelCase in JSX. In fact, so are attributes normally written in hyphen-case (e.g. `tab-index`)
 #### So what about state?
-In React there is no __shared__ mutable state, but there is mutable state. State is completely internal to a component - components can't change other components' state, components can only change their own state.
+__State__ is the other key way to customise your components. However, where props are __external__, state is __internal__. So while props are defined when components are created in a `render()` method, state is only visible from the _inside_ of component definitions.
+
+In React there is no __shared__ mutable state, but there is mutable state. State is completely internal to a component - components can't change other components' state, components can only change their own state. State is therefore private.
 
 Upon changing state, a re-render is triggered. We can change state through passing in the new values we want to __merge__ with current state to `this.setState()`. This is generally the only way you'll want to change state.
 
@@ -194,9 +204,9 @@ So state is useful for self-contained data which need not be published externall
 
 We've attached an event listener to the button, so that when a click event happens, our `clickHandler()` function defined on the component is run. This function updates the state by calling `this.setState()`, merging the new value with the old. So, the boolean value of `this.state.liked` is flipped, `setState()` is called with that flipped value, and a re-render is triggered.
 
-There's also this `getInitialState()` thing there. What's up with that? Well, it's like `getDefaultProps()` we saw earlier, but it provides the entire internal state of the component rather than sets a default. When you have a stateful component, it's best to declare all of the values you expect to be manipulating in state in `getInitialState()`, along with some representation of their expected data type. So you might have `willBeFilledByAjaxLater: []` in there, so that it's easy to see  that there is an array in state with that name.
+There's also this `getInitialState()` thing there. What's up with that? Well, it's like `getDefaultProps()` we saw earlier, but it provides the __entire initial internal state__ of the component rather than setting a default. When you have a stateful component, you should always declare all of the values you expect to be manipulating in state in `getInitialState()`, along with some representation of their expected data type. So you might have `willBeFilledByAjaxLater: []` in there, so that it's easy to see  that there is an array in state with that name, and so that this value is available from the first render.
 
-As a principle, try to keep state to a minimum. If multiple components depend on the same state, find the common parent component and have that be stateful. For most simple apps, you can stick with having one stateful top-level component and the rest relying on props passed to them by higher-level components.
+As a principle, try to keep stateful components to a minimum. If multiple components depend on the same set of values, and those values need to be dynamic, find the common parent component and have that be stateful. For most simple apps, you can stick with having one stateful top-level component and the rest relying on props passed to them by higher-level components.
 
 In that case, if state resides in a parent component, and there's no shared state, how can children components hope to change the UI in any way?
 
