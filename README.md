@@ -96,15 +96,15 @@ var LikeButton = React.createClass({
     },
 
   render: function() {
-    var cl = "like";
+    var buttonClass = "like";
 
     if(this.props.liked) {
-      cl += " yup";
+      buttonClass += " yup";
     }
 
     return (
-      <button className={cl}>
-        S
+      <button className={buttonClass}>
+        +
       </button>
     );
   }
@@ -167,14 +167,14 @@ var LikeButton = React.createClass({
   },
 
   render: function() {
-    var cl = "like";
+    var buttonClass = "like";
 
       if(this.state.liked) {
-        cl += " yup";
+        buttonClass += " yup";
       }
 
     return (
-      <button className={cl} onClick={this.clickHandler}>
+      <button className={buttonClass} onClick={this.clickHandler}>
         {this.state.liked ? "-" : "+"}
       </button>
     );
@@ -238,14 +238,14 @@ var LikeButton = React.createClass({
   },
 
   render: function() {
-    var cl = "like";
+    var buttonClass = "like";
 
     if(this.props.liked) {
-      cl += " yup";
+      buttonClass += " yup";
     }
 
     return (
-      <button className={cl} onClick={this.clickHandler}>
+      <button className={buttonClass} onClick={this.clickHandler}>
         {this.props.liked ? "-" : "+"}
       </button>
     );
@@ -281,7 +281,7 @@ React.render(<User />, document.getElementById("content"));
 ```
 So now both `LikeButton` and `UserStatus` need to know the value of `liked`. We also want `liked` to change dynamically. So, we store `liked` in the common parent component, and that component is stateful. By storing `liked` in the parent's state, we can pass down its value to other components as props so they can make use of that value.
 
-Since we want some interactivity in our app, we define some state-setting function in our stateful `User` component (`toggleLike()`). We then send that function down  to `LikeButton` as we would do normally. Finally, we just reference that function in the child component's `clickHandler()`, and _voila_, `LikeButton` is given a way to change the state of its parent.
+Since we want some interactivity in our app, we define some state-setting function in our stateful `User` component (`toggleLike()`). We then send that function down  to `LikeButton` as we would do normally with other props. Finally, we just reference that function in the child component's `clickHandler()`, and _voila_, `LikeButton` is given a way to change the state of its parent.
 
 This pattern will be your bread-and-butter in making React apps. Find some common parent that holds state. Define some state-setting functions in that parent component. Render child components in that parent, passing those methods down as props, and add event handlers to those child components which call `this.props.myFunkyStateSetter`.
 
