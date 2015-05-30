@@ -93,3 +93,6 @@ Ranked from 1-5 based on presumed react-experience, but all have been chosen for
 * _[React JSFiddle](http://jsfiddle.net/reactjs/69z2wepo/)_ - lets you play around with React in your browser
 * _[React cheatsheet](http://ricostacruz.com/cheatsheets/react.html)_ - A good quick reference guide for concepts and syntax alike
 * _[List of react resources](https://github.com/enaqx/awesome-react)_ - A fairly long, curated list of react/flux resources. A bit overwhelming at first, but really good when you get a bit more familiar with react.
+
+* [Slides from the day](http://slides.com/jamesgriffiths/begin-react-workshop/live#/9/1)
+* [Flux tutorial](https://github.com/MIJOTHY/FOR_FLUX_SAKE)
