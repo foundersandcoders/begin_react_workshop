@@ -9,12 +9,9 @@ var React = require("react");
 
 var ListItem = React.createClass({
   render: function() {
-    <li>{this.props.content}</li>
+    return <li>{this.props.content}</li>;
   }
 });
-
-module.exports = ListItem;
-
 
 var ListHolder = React.createClass({
   getInitialState: function() {
@@ -40,11 +37,15 @@ var ListHolder = React.createClass({
 
 
 React.render(
-  <ListHolder />
+  <ListHolder />,
   document.getElementById("content")
 );
 ```
-We also want to give those mapped-over components a unique `key` attribute. This is so that if the children are shuffled about, reordered or something else dynamic happens, React can reconcile them efficiently. One way to think of this is as a unique identifier for each element returned from our iteration. It is generally advisable to use the current index of the item as `key`.
+### Keys
+
+We also want to give those mapped-over components a unique `key` attribute. Why?
+
+Keys are a way for React to correlate the DOM with the business object. This is so that if the children are shuffled about, reordered or something else dynamic happens, React can reconcile them efficiently. One way to think of this is as a unique identifier for each element returned from our iteration. It is generally advisable to use the current index of the item as `key`.
 
 ---
 ## Lifecycle Events
@@ -141,6 +142,11 @@ var RefExample = React.createClass({
   }
 });
 
+React.render(
+  <RefExample />,
+  document.getElementById("content")
+);
+
 ```
 
 ---
@@ -180,5 +186,9 @@ var controlledFormComponent = React.createClass({
   }
 });
 ```
+There are a number of benefits to using controlled components, and keeping state at the 'top'.
+* We don't have to extract uncontrolled state from the rebellious input field
+* We can ditch refs - leads to cleaner and easier to understand code
+* We can manipulate the value in a dynamic way (e.g. truncate, on-the-fly validation)
 
 ---
