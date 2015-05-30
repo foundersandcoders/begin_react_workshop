@@ -74,7 +74,7 @@ We also want to give those mapped-over components a unique `key` attribute. This
 >  **NOTE:**
 > There is no analogous method `componentWillReceiveState`. An incoming prop transition may cause a state change, but the opposite is not true. If you need to perform operations in response to a state change, use `componentWillUpdate`.
 
-#### Updating: shouldComponentUpdate
+#### Updating: [shouldComponentUpdate](https://facebook.github.io/react/docs/component-specs.html#updating-shouldcomponentupdate)
 
 `boolean shouldComponentUpdate(object nextProps, object nextState)`
 
