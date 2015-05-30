@@ -1,5 +1,7 @@
 ## Begin React Workshop
 
+[![Join the chat at https://gitter.im/foundersandcoders/begin_react_workshop](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/foundersandcoders/begin_react_workshop?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 So, today we're gonna learn some react.
 We're gonna start by introducing you to the concepts in React by incrementally making a few components, and then after lunch, we'll build a basic app to entrench these concepts, consolidate what we've learned, learn some best practices, and generally try to fix most of the things wrong with the world today.
 
