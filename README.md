@@ -131,14 +131,14 @@ var React = require("react");
 var RefExample = React.createClass({
   componentDidMount: function() {
     console.log(this.refs.someOtherRef);
-    console.log(React.findDOMNode(this.refs.textinput).value);
+    console.log(React.findDOMNode(this.refs.textInput).value);
   },
 
   render: function() {
     return (
       <div>
         <SomeOtherComponent ref="someOtherRef" />
-        <input type="text" value="hello" />
+        <input type="text" value="hello" ref="textInput" />
       </div>
     );
   }
