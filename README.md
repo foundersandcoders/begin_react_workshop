@@ -1,7 +1,6 @@
 ## Begin React Workshop
 
 [![Join the chat at https://gitter.im/foundersandcoders/begin_react_workshop](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/foundersandcoders/begin_react_workshop?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  
-__[Survey please!](https://founderscoders.typeform.com/to/wMiTnS)__  
 __[Slides from the day](http://slides.com/jamesgriffiths/begin-react-workshop/#/)__
 
 So, today we're gonna learn some react.
