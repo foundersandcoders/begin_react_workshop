@@ -4,21 +4,23 @@
   "description": "resources for weekend react workshop",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run serve & npm run live-reload & npm run build:watch",
     "prebuild": "npm run lint",
     "build": "browserify -t reactify --es6 src/js/main.jsx -o build/js/main.js",
     "build:watch": "watchify src/js/main.jsx -t reactify --es6 -o build/js/main.js",
     "lint": "jsxhint src/**/*.jsx",
     "live-reload": "live-reload build/ --port 9081",
-    "serve": "http-server -s"
+    "serve": "http-server -s",
+    "test": "mocha --compilers .:tests/compiler.js ./test/**/*.js"
   },
   "author": "MIJOTHY",
   "license": "ISC",
   "devDependencies": {
     "browserify": "^10.2.1",
     "http-server": "^0.8.0",
+    "jsdom": "^5.4.3",
     "jsxhint": "^0.15.0",
     "live-reload": "^1.1.0",
+    "mocha": "^2.2.5",
     "reactify": "^1.1.1",
     "watchify": "^3.2.1"
   },
