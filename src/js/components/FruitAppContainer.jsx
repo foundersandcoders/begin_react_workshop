@@ -1,85 +1,84 @@
-var React = require("react");
-var FruitApp = require("./FruitApp.jsx");
+"use strict";
+import React, { Component } from "react";
+import FruitApp from "./FruitApp.jsx";
 
 function getStateFromData() {
 	return {
 		headerText: "",
 		fruities: [
 			{ id: "123456", fruit: "Chicken", quantity:6 },
-			{ id: "123467", fruit: "Apples" , quantity:2 },
+			{ id: "123467", fruit: "Apples",  quantity:2 },
 			{ id: "123478", fruit: "Oranges", quantity:4 },
-			{ id: "123489", fruit: "Peaches", quantity:1 },
+			{ id: "123489", fruit: "Peaches", quantity:1 }
 		]
 	};
 }
 
-var FruitAppContainer = React.createClass({
+export default class FruitAppContainer extends Component {
 
-	getInitialState: function() {
-		return getStateFromData();
-	},
+	constructor(props) {
+		super(props);
+		this.state = getStateFromData();
+	}
 
-	addFruit: function(name) {
+	addFruit(name) {
 		if (name === "") return;
-		var newFruities = this.state.fruities;
-		var timestamp = Date.now().toString();
-		var freshFruit = {
-			id: timestamp.slice(timestamp.length-6),
+
+		const timestamp = Date.now().toString();
+		const freshFruit = {
+			id: timestamp.slice(timestamp.length - 6),
 			fruit: name,
 			quantity: 1
 		};
-		newFruities.push(freshFruit);
 
-		return this.setState({headerText: "", fruities: newFruities});
-	},
+		let newFruities = this.state.fruities.concat([freshFruit]);
+		this.setState({headerText: "", fruities: newFruities});
+	}
 
-	changeText: function(text) {
-		return this.setState({headerText: text});
-	},
+	changeText(text) {
+		this.setState({headerText: text});
+	}
 
-	decrementQuantity: function(id) {
-		var newFruities = [];
+	decrementQuantity(id) {
+		let newFruities = [];
 
 		this.state.fruities.forEach(function(ele) {
 			if (ele.id === id) {
 				if (ele.quantity === 0) return;
-				ele.quantity -= 1;
+				else ele.quantity -= 1;
 			}
-			return newFruities.push(ele);
+			newFruities.push(ele);
 		});
 
-		return this.setState({fruities: newFruities});
-	},
+		this.setState({fruities: newFruities});
+	}
 
-	incrementQuantity: function(id) {
-		var newFruities = [];
+	incrementQuantity(id) {
+		let newFruities = [];
 
 		this.state.fruities.forEach(function(ele) {
 			if (ele.id === id) ele.quantity += 1;
-			return newFruities.push(ele);
+			newFruities.push(ele);
 		});
 
-		return this.setState({fruities: newFruities});
-	},
+		this.setState({fruities: newFruities});
+	}
 
-	clearFruities: function() {
-		return this.setState({fruities: []});
-	},
+	clearFruities() {
+		this.setState({fruities: []});
+	}
 
-	render: function() {
+	render() {
 		return (
 			<FruitApp
 				fruities={this.state.fruities}
 				headerText={this.state.headerText}
-				addFruit={this.addFruit}
-				changeText={this.changeText}
-				incrementQuantity={this.incrementQuantity}
-				decrementQuantity={this.decrementQuantity}
-				clearFruities={this.clearFruities}
+				addFruit={this.addFruit.bind(this)}
+				changeText={this.changeText.bind(this)}
+				incrementQuantity={this.incrementQuantity.bind(this)}
+				decrementQuantity={this.decrementQuantity.bind(this)}
+				clearFruities={this.clearFruities.bind(this)}
 			/>
 		);
 	}
-
-});
-
-module.exports = FruitAppContainer;
+}

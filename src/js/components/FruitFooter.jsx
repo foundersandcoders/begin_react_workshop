@@ -1,23 +1,18 @@
-var React = require("react");
+"use strict";
+import React, { Component, PropTypes } from "react";
 
-var Props = React.PropTypes;
-
-var FruitFooter = React.createClass({
-
-	propTypes: {
-		clearItems: Props.func.isRequired
-	},
-
-	render: function() {
+export default class FruitFooter extends Component {
+	render() {
 		return (
 			<div className="options-item">
-			    <button onClick={this.props.clearItems} className="clear">
-			    	<img id="restart" src="assets/img/glyphicon-restart.png" />
-			    </button>
+					<button onClick={this.props.clearItems} className="clear">
+						<img id="restart" src="assets/img/glyphicon-restart.png" />
+					</button>
 			</div>
 		);
 	}
+}
 
-});
-
-module.exports = FruitFooter;
+FruitFooter.propTypes = {
+	clearItems: PropTypes.func.isRequired
+};

@@ -1,30 +1,22 @@
-var React 		  	= require("react");
-var FruitListItem = require("./FruitListItem.jsx");
+"use strict";
+import React, { Component, PropTypes } from "react";
+import FruitListItem from "./FruitListItem.jsx";
 
-var Props = React.PropTypes;
+export default class FruitList extends Component {
 
-var FruitList = React.createClass({
+	render() {
+		let items = [];
 
-	propTypes: {
-		items: Props.arrayOf(Props.object),
-		filterText: Props.string,
-		incrementQuantity: Props.func.isRequired,
-		decrementQuantity: Props.func.isRequired
-	},
-
-	render: function() {
-		var items = [];
-
-		this.props.items.forEach(function(item) {
+		this.props.items.forEach((item, i) => {
 			if (item.fruit.indexOf(this.props.filterText) !== -1) {
 				items.push(
-					<FruitListItem key={item.id} content={item.fruit} quantity={item.quantity}
+					<FruitListItem key={i} content={item.fruit} quantity={item.quantity}
 						incrementQuantity={this.props.incrementQuantity.bind(null, item.id)}
 						decrementQuantity={this.props.decrementQuantity.bind(null, item.id)}
 					/>
 				);
 			}
-		}, this);
+		});
 
 		return (
 			<div className="fruit-list">
@@ -32,7 +24,11 @@ var FruitList = React.createClass({
 			</div>
 			);
 	}
+}
 
-});
-
-module.exports = FruitList;
+FruitList.propTypes = {
+	items: PropTypes.arrayOf(PropTypes.object),
+	filterText: PropTypes.string,
+	incrementQuantity: PropTypes.func.isRequired,
+	decrementQuantity: PropTypes.func.isRequired
+};

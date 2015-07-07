@@ -1,23 +1,11 @@
-var React = require("react");
-var FruitHeader = require("./FruitHeader.jsx");
-var FruitList 	= require("./FruitList.jsx");
-var FruitFooter = require("./FruitFooter.jsx");
+"use strict";
+import React, { Component, PropTypes } from "react";
+import FruitHeader from "./FruitHeader.jsx";
+import FruitList 	from "./FruitList.jsx";
+import FruitFooter from "./FruitFooter.jsx";
 
-var Props = React.PropTypes;
-
-var FruitApp = React.createClass({
-
-	propTypes: {
-		"fruities": Props.arrayOf(Props.object),
-		"headerText": Props.string,
-		"addFruit": Props.func.isRequired,
-		"changeText": Props.func.isRequired,
-		"incrementQuantity": Props.func.isRequired,
-		"decrementQuantity": Props.func.isRequired,
-		"clearFruities": Props.func.isRequired
-	},
-
-	render: function() {
+export default class FruitApp extends Component {
+	render() {
 		return (
 			<div className="app-wrapper">
 				<FruitHeader title={this.props.headerText}
@@ -33,6 +21,14 @@ var FruitApp = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
-module.exports = FruitApp;
+FruitApp.propTypes = {
+	fruities: PropTypes.arrayOf(PropTypes.object),
+	headerText: PropTypes.string,
+	addFruit: PropTypes.func.isRequired,
+	changeText: PropTypes.func.isRequired,
+	incrementQuantity: PropTypes.func.isRequired,
+	decrementQuantity: PropTypes.func.isRequired,
+	clearFruities: PropTypes.func.isRequired
+};
