@@ -30,6 +30,6 @@ export default class FruitHeader extends Component {
 
 FruitHeader.propTypes = {
 	title: PropTypes.string,
-	changeText: PropTypes.func.isRequired,
-	addItem: PropTypes.func
+	addItem: PropTypes.func,
+	changeText: PropTypes.func.isRequired
 };

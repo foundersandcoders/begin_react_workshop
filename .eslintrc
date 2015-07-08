@@ -11,7 +11,8 @@
     "jsx": true
 	},
 	"globals": {
-		"require": false
+		"require": false,
+		"global": true
 	},
 	"rules": {
 		"quotes": [2, "double"],
