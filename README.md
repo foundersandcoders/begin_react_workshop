@@ -14,9 +14,11 @@ cd begin_react_workshop
 npm install
 git checkout [see branches below]
 ```
-Now you're all installed, there's one more step you may need to take. To get developing, you'll need `src/js` and `build/js` folders. In the `src/js` folder, you'll need a file called `main.jsx`. That'll be your starting point. Once you've got those, in the terminal, type:
+Now you're all installed, there's one more step you may need to take. To get developing, you'll need `src/js` and `build/js` folders. In the `src/js` folder, you'll need a file called `main.jsx`. That'll be your starting point. Once you've got those, open up three terminal tabs, and type:
 ```
-npm run dev
+npm run serve 
+npm run live-reload 
+npm run build:watch
 ```
 Open a browser of your choice and navigate to `localhost:8080`, and hopefully you'll see nothing there. What an anticlimax, but I'm still proud of you all.  
 
