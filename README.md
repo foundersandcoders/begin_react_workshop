@@ -34,6 +34,7 @@ We'll be checking out regularly through the day, so on this branch you'll have a
 * __kidsteps__ - Some useful extras, best practices and so forth
 * __appmockup__ - The mockup for the app. Just HTML  
 * __appcomplete__ - The dynamic version of the app  
+* __es6__ - The es6ified app  
 
 ## Scripts
 There are a set of development scripts in the package.json for your use:
